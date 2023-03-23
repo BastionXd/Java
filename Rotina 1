@@ -1,0 +1,88 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+public class Cultura {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		int opcao, numero1, numero2;
+		do {
+		System.out.println("Menu");
+		System.out.println("1-Primos");
+		System.out.println("2-Perfeitos");
+		System.out.println("3- amigos");
+		System.out.println("4-Fim");
+		System.out.println("Qual a sua opção");
+		opcao = sc.nextInt();
+		switch (opcao) {
+		case 1:
+			System.out.println("Informe um numero");
+			numero1= sc.nextInt();
+			System.out.println(primos(numero1));
+			System.out.println("Informe outro numero");
+			numero2 = sc.nextInt();
+			System.out.println(primos(numero2));
+			break;
+		case 2:
+			System.out.println("Informe um numero");
+			numero1 = sc.nextInt();
+			System.out.println(perfeitos(numero1));
+			break;
+		case 3:
+			System.out.println("Informe um numero");
+			numero1 = sc.nextInt();
+			System.out.println("Informe outro numero");
+			numero2 = sc.nextInt();
+			System.out.println(amigos(numero1, numero2));
+			break;
+			
+		}
+	} while (opcao !=4);
+
+}
+	public static String primos(int numero) {
+		int i, total = 0;
+		for(i=1; i < numero; i++) {
+			if(numero %i==0) {
+				total++;
+			
+			}
+		}
+		if(total<=2) {
+			return "Primo";
+		}
+		else {
+			return "Não é primo";
+		}
+	}
+	public static int somaDivisores(int numero) {
+		int i, soma=0;
+		for (i=1; i<numero; i++) {
+			if(numero%i ==0) {
+				soma +=i;
+			}
+		}
+		return soma;
+	}
+	public static String perfeitos(int numero) {
+		int soma = somaDivisores(numero);
+		if(soma == numero) {
+			return "Pefeito";
+			
+			}
+		else {
+			return "Não é Perfeito";
+		}
+	}
+	public static String amigos(int numero1, int numero2) {
+		int soma1 = somaDivisores(numero1);
+		int soma2 = somaDivisores(numero2);
+		if ((soma1==numero2) && (soma2==numero1)) {
+			return "São amigos";
+		}
+		else { return "Não São amigos";
+	}
+}
+}

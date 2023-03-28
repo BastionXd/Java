@@ -1,0 +1,25 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+public class sla {
+
+	public static void main (String[] argrs ) {
+	Scanner scan = new Scanner(System.in);
+
+	
+	int [] vet = new int[10]; 
+	System.out.println("Informe 10 numeros");
+	int soma=0;
+	for(int i=0; i<10; i++) {
+		System.out.println("Informe o numero");
+		vet[i] =scan.nextInt();
+		soma += vet[i];
+		
+	
+	}
+	System.out.println("O resultado = "+ soma);
+	scan.close();
+	}
+	
+}

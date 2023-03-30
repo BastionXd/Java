@@ -5,15 +5,19 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int opc, qtdnotas = 0;
 		float nota = 0;
-		String nome, cpf;
+		String nome, cpf, admin;
 		Sala novasala = new Sala();
 		Aluno novoAluno = new Aluno();
 		Scanner scan = new Scanner(System.in);
-
+        
 		do {
+			
+			
+			System.out.println("Por Favor insira seu ID!");
+			admin = scan.nextLine();
 			System.out.println("\n--------------");
 			System.out.println("       MENU");
 			System.out.println("Escolha uma opção");
@@ -47,9 +51,11 @@ public class Main {
 				
 				break;
 			case 2:
+				System.out.println("\nOlá, administrador... Esta aqui é a lista de alunos!!!");
 				novasala.listarAlunos();
 				break;
 			case 3:
+				System.out.println("\nOlá, administrador... Esta aqui é a lista de alunos!!!");
 				novasala.listarsituacoes();
 				break;
 			case 0:

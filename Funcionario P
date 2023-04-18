@@ -1,0 +1,53 @@
+package tomate;
+
+public class Funcionario {
+	
+private String nome;
+private double salario, salarioBruto,imposto;
+private void calculaSalarioLiquido(Double salarioBruto, Double imposto) {
+	// TODO Auto-generated method stub
+	
+}
+public Funcionario(String nome, Double salarioBruto, Double imposto) {
+	this.nome = nome;
+	this.salarioBruto = salarioBruto;
+	this.imposto = imposto;
+	calculaSalarioLiquido(salarioBruto, imposto);
+}
+public double getImposto() {
+	return imposto;
+}
+public void setImposto(double imposto) {
+	this.imposto = imposto;
+}
+public String getNome() {
+	return nome;
+}
+public void setNome(String nome) {
+	this.nome = nome;
+}
+public double getSalario() {
+	return salario;
+}
+public void setSalario(double salario) {
+	this.salario = salario;
+}
+public double getSalarioBruto() {
+	return salarioBruto;
+}
+public void setSalarioBruto(double salarioBruto) {
+	this.salarioBruto = salarioBruto;
+}
+public double salarioLiquido() {
+	return  salarioBruto - imposto ;
+}
+@Override
+public String toString() {
+	return nome+ " R$ "+String.format("%.2f", salarioLiquido());
+}
+
+public void reajusteSalario(Double percentual) {
+	salarioBruto += salarioBruto * percentual / 100;
+	calculaSalarioLiquido(salarioBruto, imposto);
+}
+}

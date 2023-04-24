@@ -1,0 +1,17 @@
+package aplicacao;
+import java.util.Scanner;
+import entidades.ConversorMoeda;
+public class DolaresEmReal {
+
+public static void main (String [] args) {
+  Scanner scan = new Scanner(System.in);
+  ConversorMoeda moeda = new CoversorMoeda();
+  System.out.println("Qual o valor do dolar americano atualmente?)
+  moeda.cotacao = scan.nextDouble();
+  System.out.println("Quantos dolares quer comprar?);
+  moeda.dolar = scan.nextDouble();
+  
+  System.out.println("Valor em reais")
+  moeda.converterMoeda();
+    }
+  }
